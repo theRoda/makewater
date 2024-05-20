@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3d64762-95d8-4046-986a-4919c96dab08" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uniciph.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ciphers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ciphers/atbash.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ciphers/base64.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ciphers/caesar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ciphers/check.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ciphers/hex.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ciphers/reverse.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ciphers/sbxor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/english/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/english/detectenglish.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/english/dictionary.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/english/ic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uniciph.py" afterDir="false" />
-    </list>
+    <list default="true" id="b3d64762-95d8-4046-986a-4919c96dab08" name="Changes" comment="refactor in python3. add IC." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +34,7 @@
     "Python.uniciph.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -107,7 +87,20 @@
       <option name="presentableId" value="Default" />
       <updated>1716075781207</updated>
     </task>
+    <task id="LOCAL-00001" summary="refactor in python3. add IC.">
+      <option name="closed" value="true" />
+      <created>1716181790656</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716181790656</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactor in python3. add IC." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor in python3. add IC." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
