@@ -18,6 +18,7 @@ ictext = "This is an English sentence that I am writing the quick fox jumped ove
 icparagraph = "If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear."
 random = "GhFBKrJJxiMXNRCxXiELbhvjFxbwFCLWTyadJeAG"
 vigenere = "Dlgc mq k zgqilovc mmnrip gmrr oci OCI"
+test = "test"
 
 def testAll(ciphertext):
 	c.testHex(ciphertext)
