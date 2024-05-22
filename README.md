@@ -7,14 +7,15 @@ Credit to http://inventwithpython.com/hacking for the english detection ideas.
 <br><br>
 * Current features:
   * Brute force
-    * base64
-    * reverse
-    * atbash
-    * caesar
-    * hex
-    * single byte XOR
+    * Base64
+    * Reverse
+    * Atbash
+    * Caesar
+    * Hex
+    * Single byte XOR
   * Analysis
     * IC
+    * Hammming Distance
 
 
 * Roadmap:
