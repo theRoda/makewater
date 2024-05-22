@@ -15,3 +15,14 @@ def checkIC(ciphertext):
     else:
         ic = round(numerator / (denominator * (denominator - 1)), 5)
         print(f'[!] IC: {ic}')
+
+
+def bwxor(s1, s2):
+    return bytes([x ^ y for (x, y) in zip(s1, s2)])
+
+def checkHamming(ciphertext):
+    test = "this is a test"
+    wokka = "wokka wokka!!!"
+    q1 = bytearray.fromhex(test.encode('utf-8').hex())
+    q2 = bytearray.fromhex(wokka.encode('utf-8').hex())
+    return(sum(bin(byte).count('1') for byte in bwxor(q1, q2)))

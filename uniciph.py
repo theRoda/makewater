@@ -30,7 +30,8 @@ def testAll(ciphertext):
 	ic.checkIC(ciphertext)
 
 def main():
-	testAll(icparagraph)
+	#testAll(icparagraph)
+	print(ic.checkHamming(test))
 
 	if not c.matchlist:
 		print('No matches found.')
