@@ -11,10 +11,10 @@ def checkIC(ciphertext):
         numerator += f * (f - 1)
         denominator += f
     if (denominator == 0.0):
-        print(f'[!] IC: 0 | No alpha characters detected.')
+        return(denominator)
     else:
         ic = round(numerator / (denominator * (denominator - 1)), 5)
-        print(f'[!] IC: {ic}')
+        return(ic)
 
 
 def bwxor(s1, s2):

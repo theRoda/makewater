@@ -1,4 +1,5 @@
 import ciphers as c
+import english
 import english.ic as ic
 
 baseline = "This is a decoded string."
@@ -27,11 +28,19 @@ def testAll(ciphertext):
 	c.testCaesar(ciphertext)
 	c.testSingleByteXOR(ciphertext)
 	c.testAtbash(ciphertext)
-	ic.checkIC(ciphertext)
+	ioc = ic.checkIC(ciphertext)
+	#hamming = english.checkHamming(ciphertext)
+
+	#print(f'[!] Hamming Distance Test {hamming}')
+
+	if ioc:
+		print(f'[!] IC {ioc}')
+	else:
+		print(f'[!] IC {ioc} | No alpha characters detected')
+
 
 def main():
-	#testAll(icparagraph)
-	print(ic.checkHamming(test))
+	testAll(rot7)
 
 	if not c.matchlist:
 		print('No matches found.')
