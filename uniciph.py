@@ -7,6 +7,7 @@ inputmethod = parser.add_mutually_exclusive_group()
 inputmethod.add_argument('-c', '--ciphertext', type=str, default=None, help='Give the ciphertext as an argument')
 inputmethod.add_argument('-f', '--file', type=str, default=None, help='Give the ciphertext as a file. Used for cracking a single piece of text.')
 inputmethod.add_argument('-m', '--manyinfile', type=str, default=None, help='Give the ciphertext as a file of newline seperated strings. Used for cracking many ciphertexts in a single file.')
+parser.add_argument('-p', '--prefilter', choices=['hex', 'reverse'], default=None, help='Apply a filter before cracking. Current option is "hex".')
 
 
 baseline = "This is a decoded string."
@@ -45,19 +46,33 @@ def testAll(ciphertext):
 	else:
 		print(f'[!] IC {ioc} | No alpha characters detected')
 
+	if c.isHexString(ciphertext):
+		print(f'[!] Ciphertext is a hex string')
+
 
 def main():
 	args = parser.parse_args()
+	prefilter = args.prefilter
+
+
+
+
 	if args.ciphertext is not None:
-		testAll(args.ciphertext)
+		ciphertext = args.ciphertext
+		testAll(ciphertext)
 	elif args.file is not None:
 		with open(args.file, 'r') as filename:
-			print(filename.readlines())
-			#todo
+			ciphertext = filename.read()
+			if prefilter == 'hex':
+				filtered = c.decodeHex(ciphertext)
+				testAll(filtered)
+			else:
+				testAll(ciphertext)
 	elif args.manyinfile is not None:
 		with open(args.manyinfile, 'r') as filename:
 			for line in filename:
-				testAll(line)
+				ciphertext = line
+				testAll(ciphertext)
 	else:
 		print('No ciphertext arguments supplied. Cracking a ciphertext anyway.')
 		testAll(sbxor)
