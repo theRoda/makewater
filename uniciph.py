@@ -1,5 +1,13 @@
+import argparse
 import ciphers as c
 import analysis.ic as ic
+
+parser = argparse.ArgumentParser(description='Universal Cipher Bruteforce Tool')
+inputmethod = parser.add_mutually_exclusive_group()
+inputmethod.add_argument('-c', '--ciphertext', type=str, default=None, help='Give the ciphertext as an argument')
+inputmethod.add_argument('-f', '--file', type=str, default=None, help='Give the ciphertext as a file. Used for cracking a single piece of text.')
+inputmethod.add_argument('-m', '--manyinfile', type=str, default=None, help='Give the ciphertext as a file of newline seperated strings. Used for cracking many ciphertexts in a single file.')
+
 
 baseline = "This is a decoded string."
 badbaseline = "Lorem ipsum dolor sit amet."
@@ -39,7 +47,21 @@ def testAll(ciphertext):
 
 
 def main():
-	testAll(rot7)
+	args = parser.parse_args()
+	if args.ciphertext is not None:
+		testAll(args.ciphertext)
+	elif args.file is not None:
+		with open(args.file, 'r') as filename:
+			print(filename.readlines())
+			#todo
+	elif args.manyinfile is not None:
+		with open(args.manyinfile, 'r') as filename:
+			for line in filename:
+				testAll(line)
+	else:
+		print('No ciphertext arguments supplied. Cracking a ciphertext anyway.')
+		testAll(sbxor)
+
 
 	if not c.matchlist:
 		print('No matches found.')
