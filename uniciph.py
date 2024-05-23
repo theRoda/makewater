@@ -54,9 +54,6 @@ def main():
 	args = parser.parse_args()
 	prefilter = args.prefilter
 
-
-
-
 	if args.ciphertext is not None:
 		ciphertext = args.ciphertext
 		testAll(ciphertext)
@@ -64,6 +61,8 @@ def main():
 		with open(args.file, 'r') as filename:
 			ciphertext = filename.read()
 			if prefilter == 'hex':
+				# todo: run checks like isHexString before filtering if prefilter set
+				# bundle analysis checks? isBLAH, IC, etc.
 				filtered = c.decodeHex(ciphertext)
 				testAll(filtered)
 			else:
