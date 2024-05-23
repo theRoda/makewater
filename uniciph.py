@@ -1,6 +1,5 @@
 import ciphers as c
-import english
-import english.ic as ic
+import analysis.ic as ic
 
 baseline = "This is a decoded string."
 badbaseline = "Lorem ipsum dolor sit amet."
