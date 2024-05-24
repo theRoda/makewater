@@ -23,7 +23,7 @@ Credit to http://inventwithpython.com/hacking for the english detection ideas.
 * Roadmap:
   * take key(s) as argument
   * take key(s) file as argument
-  * agparse/logging
+  * logging
   * repeating key XOR
   * runtime argument to set min letters and words in detectEnglish
   * cipher identification
@@ -41,5 +41,6 @@ Credit to http://inventwithpython.com/hacking for the english detection ideas.
   * Cohen's kappa test
   * Chi test
   * general performance improvements
+  * more strings encoding detection
 <br><br>
 note: When using newDetectEnglish(), the default is to require 60% words and 75% letters to return a match. The ideal values can vary greatly depending on plaintext length and contents. These values can be tweaked in the isEnglish() function, or when calling isEnglish() eg. `isEnglish(cleartext, 50, 80)` would require 50% words and 80% letters.
