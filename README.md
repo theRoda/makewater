@@ -13,9 +13,11 @@ Credit to http://inventwithpython.com/hacking for the english detection ideas.
     * Caesar
     * Hex
     * Single byte XOR
+    * Hex Prefilter
   * Analysis
     * IC
     * Hammming Distance
+    * String Encoding Detection: Hex
 
 
 * Roadmap:

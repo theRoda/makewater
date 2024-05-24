@@ -7,8 +7,7 @@ def cleanHex(ciphertext):
 
 def isHexString(ciphertext):
     cleancipher = cleanHex(ciphertext)
-    if all(h in string.hexdigits for h in cleancipher):
-        return(True)
+    return(all(h in string.hexdigits for h in cleancipher))
 
 
 def testHex(ciphertext):

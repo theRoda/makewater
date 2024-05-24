@@ -73,7 +73,7 @@ def main():
 				ciphertext = line
 				testAll(ciphertext)
 	else:
-		print('No ciphertext arguments supplied. Cracking a ciphertext anyway.')
+		print('[!] No ciphertext arguments supplied. Cracking a ciphertext anyway.')
 		testAll(sbxor)
 
 
