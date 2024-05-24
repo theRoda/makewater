@@ -1,3 +1,4 @@
+import sys
 import time
 import argparse
 import logging
@@ -7,12 +8,16 @@ import analysis.ic as ic
 
 logger1 = logging.getLogger(__name__)
 logger1.setLevel(logging.DEBUG)
-handler = RotatingFileHandler('uniciph.log', maxBytes=10*1024*1024, backupCount=10)
-formatter = logging.Formatter('%(asctime)s UTC - %(name)s - %(levelname)s - %(message)s')
+filehandler = RotatingFileHandler('uniciph.log', maxBytes=10*1024*1024, backupCount=10)
+screenhandler = logging.StreamHandler(sys.stdout)
+screenhandler.setLevel(logging.INFO)
+#formatter = logging.Formatter('%(asctime)s UTC - %(name)s - %(levelname)s - %(message)s')
+formatter = logging.Formatter('%(asctime)s UTC - %(levelname)s - %(message)s')
 logging.Formatter.converter = time.gmtime
-handler.setFormatter(formatter)
-handler.formatter._fmt = '%Y-%m-%d %H:%M:%S'
-logger1.addHandler(handler)
+filehandler.setFormatter(formatter)
+screenhandler.setFormatter(formatter)
+logger1.addHandler(filehandler)
+logger1.addHandler(screenhandler)
 
 
 parser = argparse.ArgumentParser(description='Universal Cipher Bruteforce Tool')
@@ -52,18 +57,18 @@ def testAll(ciphertext):
 	c.testSingleByteXOR(ciphertext)
 	c.testAtbash(ciphertext)
 	ioc = ic.checkIC(ciphertext)
-	#hamming = english.checkHamming(ciphertext)
 
-	#print(f'[!] Hamming Distance Test {hamming}')
 
 	if ioc:
 		logger1.info(f'IC {ioc}')
-		print(f'[!] IC {ioc}')
+		#print(f'[!] IC {ioc}')
 	else:
-		print(f'[!] IC {ioc} | No alpha characters detected')
+		logger1.info(f'[!] IC {ioc} | No alpha characters detected')
+		#print(f'[!] IC {ioc} | No alpha characters detected')
 
 	if c.isHexString(ciphertext):
-		print(f'[!] Ciphertext is a hex string')
+		logger1.info(f'[!] Ciphertext is a hex string')
+		#print(f'[!] Ciphertext is a hex string')
 
 
 def main():
@@ -94,19 +99,19 @@ def main():
 				ciphertext = line
 				testAll(ciphertext)
 	else:
-		logger1.debug('No ciphertexts supplied')
-		print('[!] No ciphertext arguments supplied. Cracking a ciphertext anyway.')
+		logger1.info('No ciphertexts supplied. Cracking a ciphertext anyway.')
+		#print('[!] No ciphertext arguments supplied. Cracking a ciphertext anyway.')
 		testAll(sbxor)
 
 
 	if not c.matchlist:
 		logger1.debug('No matches found')
-		print('No matches found.')
+		#print('No matches found.')
 	else:
 		matches = '\n'.join(c.matchlist)
 		logger1.debug('Found match')
 		logger1.info(f'{matches}')
-		print(matches)
+		#print(matches)
 
 	logger1.debug('Stopped cracking')
 
