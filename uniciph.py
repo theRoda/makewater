@@ -106,12 +106,10 @@ def main():
 
 	if not c.matchlist:
 		logger1.debug('No matches found')
-		#print('No matches found.')
 	else:
-		matches = '\n'.join(c.matchlist)
 		logger1.debug('Found match')
-		logger1.info(f'{matches}')
-		#print(matches)
+		for match in c.matchlist:
+			logger1.info(f'{match}')
 
 	logger1.debug('Stopped cracking')
 
