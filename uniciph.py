@@ -4,7 +4,7 @@ import argparse
 import logging
 from logging.handlers import RotatingFileHandler
 import ciphers as c
-import analysis.ic as ic
+import analysis.analysis as ic
 
 logger1 = logging.getLogger(__name__)
 logger1.setLevel(logging.DEBUG)
@@ -46,6 +46,7 @@ icparagraph = "If you're looking for random paragraphs, you've come to the right
 random = "GhFBKrJJxiMXNRCxXiELbhvjFxbwFCLWTyadJeAG"
 vigenere = "Dlgc mq k zgqilovc mmnrip gmrr oci OCI"
 test = "test"
+ice = "0b3637272a2b2e63622c2e69692a23693a2a3c6324202d623d63343c2a26226324272765272a282b2f20430a652e2c652a3124333a653e2b2027630c692b20283165286326302e27282f"
 
 def testAll(ciphertext):
 	logcipher = (ciphertext[:68] + '..truncate..') if len(ciphertext) > 68 else ciphertext
@@ -56,6 +57,7 @@ def testAll(ciphertext):
 	c.testCaesar(ciphertext)
 	c.testSingleByteXOR(ciphertext)
 	c.testAtbash(ciphertext)
+	c.testRepeatingKeyXOR(ciphertext)
 	ioc = ic.checkIC(ciphertext)
 
 

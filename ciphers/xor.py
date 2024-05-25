@@ -1,5 +1,7 @@
 # single byte xor
 import ciphers.check as check
+from analysis import findVigenereKey as fvk
+from analysis import decryptVigenere as dv
 
 def testSingleByteXOR(ciphertext):
     for byte in range(256):  # XOR against all possible single hex bytes
@@ -9,3 +11,12 @@ def testSingleByteXOR(ciphertext):
             check.checkMatch(decoded, key.hex(), 'Single Byte XOR')
         except:
             pass
+
+def testRepeatingKeyXOR(ciphertext):
+    try:
+        key = fvk(ciphertext)
+        decrypted = dv(ciphertext, key)
+        check.checkMatch(decrypted, key, 'Repeating Key XOR')
+    except:
+        pass
+
