@@ -14,6 +14,7 @@ Credit to http://inventwithpython.com/hacking for the english detection ideas.
     * Hex
     * Single byte XOR
     * Hex Prefilter
+    * Repeating key XOR
   * Analysis
     * IC
     * Hammming Distance
@@ -23,8 +24,6 @@ Credit to http://inventwithpython.com/hacking for the english detection ideas.
 * Roadmap:
   * take key(s) as argument
   * take key(s) file as argument
-  * logging
-  * repeating key XOR
   * runtime argument to set min letters and words in detectEnglish
   * cipher identification
   * railfence 
