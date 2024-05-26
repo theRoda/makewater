@@ -1,5 +1,5 @@
-# uniciph
-Universal Cipher Bruteforce and Analysis Tool
+# makewater
+decrypt things
 
 Credit to http://inventwithpython.com/hacking for the english detection ideas.
 <br><br>

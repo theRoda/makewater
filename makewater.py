@@ -8,7 +8,7 @@ import analysis.analysis as ic
 
 logger1 = logging.getLogger(__name__)
 logger1.setLevel(logging.DEBUG)
-filehandler = RotatingFileHandler('uniciph.log', maxBytes=10*1024*1024, backupCount=10)
+filehandler = RotatingFileHandler('makewater.log', maxBytes=10*1024*1024, backupCount=10)
 screenhandler = logging.StreamHandler(sys.stdout)
 screenhandler.setLevel(logging.INFO)
 #formatter = logging.Formatter('%(asctime)s UTC - %(name)s - %(levelname)s - %(message)s')
@@ -20,7 +20,7 @@ logger1.addHandler(filehandler)
 logger1.addHandler(screenhandler)
 
 
-parser = argparse.ArgumentParser(description='Universal Cipher Bruteforce Tool')
+parser = argparse.ArgumentParser(description='Brute force decryption of various things')
 inputmethod = parser.add_mutually_exclusive_group()
 inputmethod.add_argument('-c', '--ciphertext', type=str, default=None, help='Give the ciphertext as an argument')
 inputmethod.add_argument('-f', '--file', type=str, default=None, help='Give the ciphertext as a file. Used for cracking a single piece of text.')
