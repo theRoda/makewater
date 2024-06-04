@@ -69,8 +69,11 @@ def testAll(ciphertext):
 		#print(f'[!] IC {ioc} | No alpha characters detected')
 
 	if c.isHexString(ciphertext):
-		logger1.info(f'[!] Ciphertext is a hex string')
+		logger1.info(f'[!] Ciphertext might be a hex string')
 		#print(f'[!] Ciphertext is a hex string')
+
+	if c.isBase64String(ciphertext):
+		logger1.info(f'[!] Ciphertext might be a base64 string')
 
 
 def main():
