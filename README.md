@@ -19,6 +19,7 @@ Credit to http://inventwithpython.com/hacking for the english detection ideas.
     * IC
     * Hammming Distance
     * String Encoding Detection: Hex
+    * String Encoding Detection: Base64
 
 
 * Roadmap:
